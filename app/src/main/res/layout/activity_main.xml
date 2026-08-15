@@ -1,33 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- 👈 Place comment outside the tag if needed -->
+<com.sothree.slidinguppanel.SlidingUpPanelLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
+    android:id="@+id/sliding_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="bottom"
-    tools:context=".MainActivity"
-    app:umanoPanelHeight="70dp"
-    app:umanoShadowHeight="5dp">
+    app:umanoPanelHeight="68dp"
+    app:umanoShadowHeight="4dp">
 
+    <!-- Child 1: Main Content View -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <TextView
-            android:layout_centerInParent="true"
-            android:textSize="26sp"
-            android:text="Main Content"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        <!-- Your main activity views go here -->
     </RelativeLayout>
 
+    <!-- Child 2: Sliding Panel View -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-
-        <include layout="@layout/sample" />
+        <!-- Your music player sliding panel views go here -->
     </RelativeLayout>
 
 </com.sothree.slidinguppanel.SlidingUpPanelLayout>
