@@ -1,11 +1,10 @@
 package com.monstertechno.musicplayerappui;
 
+import androidx.appcompat.app.AppCompatActivity; // 👈 AndroidX import
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout.PanelState;
@@ -13,8 +12,8 @@ import com.sothree.slidinguppanel.SlidingUpPanelLayout.PanelState;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageButton like, notlike,dislike,notdislike;
-    ImageButton play,pause,play_main,pause_main;
+    ImageButton like, notlike, dislike, notdislike;
+    ImageButton play, pause, play_main, pause_main;
     private SlidingUpPanelLayout mLayout;
 
     @Override
@@ -31,33 +30,33 @@ public class MainActivity extends AppCompatActivity {
         play_main = (ImageButton) findViewById(R.id.play_button_main);
         pause_main = (ImageButton) findViewById(R.id.pause_button_main);
 
-
-        mLayout = (SlidingUpPanelLayout) findViewById(R.id.activity_main);
+        // 👈 Fixed ID matching activity_main.xml (sliding_layout)
+        mLayout = (SlidingUpPanelLayout) findViewById(R.id.sliding_layout);
 
         like.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 notlike.setVisibility(View.VISIBLE);
-                Toast.makeText(MainActivity.this,"You Like the Song",Toast.LENGTH_SHORT).show();
-                if (notdislike.getVisibility() == View.VISIBLE){
+                Toast.makeText(MainActivity.this, "You Like the Song", Toast.LENGTH_SHORT).show();
+                if (notdislike.getVisibility() == View.VISIBLE) {
                     notdislike.setVisibility(View.GONE);
                 }
             }
         });
 
-       notlike.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-               notlike.setVisibility(View.GONE);
-           }
-       });
+        notlike.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                notlike.setVisibility(View.GONE);
+            }
+        });
 
         dislike.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 notdislike.setVisibility(View.VISIBLE);
-                Toast.makeText(MainActivity.this,"You DisLike the Song",Toast.LENGTH_SHORT).show();
-                if (notlike.getVisibility() == View.VISIBLE){
+                Toast.makeText(MainActivity.this, "You DisLike the Song", Toast.LENGTH_SHORT).show();
+                if (notlike.getVisibility() == View.VISIBLE) {
                     notlike.setVisibility(View.GONE);
                 }
             }
@@ -75,12 +74,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 play.setVisibility(View.GONE);
                 pause.setVisibility(View.VISIBLE);
-                Toast.makeText(MainActivity.this,"Song Is now Playing",Toast.LENGTH_SHORT).show();
-                if (play_main.getVisibility() == View.VISIBLE){
+                Toast.makeText(MainActivity.this, "Song Is now Playing", Toast.LENGTH_SHORT).show();
+                if (play_main.getVisibility() == View.VISIBLE) {
                     play_main.setVisibility(View.GONE);
                     pause_main.setVisibility(View.VISIBLE);
                 }
-
             }
         });
 
@@ -89,8 +87,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 pause.setVisibility(View.GONE);
                 play.setVisibility(View.VISIBLE);
-                Toast.makeText(MainActivity.this,"Song is Pause",Toast.LENGTH_SHORT).show();
-                if (pause_main.getVisibility() == View.VISIBLE){
+                Toast.makeText(MainActivity.this, "Song is Pause", Toast.LENGTH_SHORT).show();
+                if (pause_main.getVisibility() == View.VISIBLE) {
                     pause_main.setVisibility(View.GONE);
                     play_main.setVisibility(View.VISIBLE);
                 }
@@ -102,8 +100,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 play_main.setVisibility(View.GONE);
                 pause_main.setVisibility(View.VISIBLE);
-                Toast.makeText(MainActivity.this,"Song Is now Playing",Toast.LENGTH_SHORT).show();
-                if (play.getVisibility() == View.VISIBLE){
+                Toast.makeText(MainActivity.this, "Song Is now Playing", Toast.LENGTH_SHORT).show();
+                if (play.getVisibility() == View.VISIBLE) {
                     play.setVisibility(View.GONE);
                     pause.setVisibility(View.VISIBLE);
                 }
@@ -115,8 +113,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 pause_main.setVisibility(View.GONE);
                 play_main.setVisibility(View.VISIBLE);
-                Toast.makeText(MainActivity.this,"Song is Pause",Toast.LENGTH_SHORT).show();
-                if (pause.getVisibility() == View.VISIBLE){
+                Toast.makeText(MainActivity.this, "Song is Pause", Toast.LENGTH_SHORT).show();
+                if (pause.getVisibility() == View.VISIBLE) {
                     pause.setVisibility(View.GONE);
                     play.setVisibility(View.VISIBLE);
                 }
